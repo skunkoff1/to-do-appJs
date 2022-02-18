@@ -13,13 +13,13 @@ html {
 .dark {
     background-image: url(../images/bg-desktop-dark.jpg);
     background-color: $dark1;
-    transition: 0.8s;
+    transition: 0.5s;
 }
 
 .light {
     background-image: url(../images/bg-desktop-light.jpg);
     background-color: $light2;
-    transition: 0.8s;
+    transition: 0.5s;
 }
 
 .container {
@@ -66,6 +66,7 @@ header {
     background-color: $dark2;
     display: flex;
     border-radius: 5px;
+    transition: 0.5s;
     .checkDiv {
         width: 15%;
         display: flex;
@@ -94,6 +95,7 @@ header {
         width: 100%;
         padding: 15px 0 10px 0;
         vertical-align: text-bottom;
+        transition: 0.5s;
     }
     .text:focus {
         outline: none;
@@ -107,6 +109,7 @@ header {
     background-color: $light1;
     display: flex;
     border-radius: 5px;
+    transition: 0.5s;
     .checkDiv {
         width: 15%;
         display: flex;
@@ -135,6 +138,7 @@ header {
         width: 100%;
         padding: 15px 0 10px 0;
         vertical-align: text-bottom;
+        transition: 0.5s;
     }
     .text:focus {
         outline: none;
@@ -164,12 +168,11 @@ header {
 }
 
 #dark {
-    width: 100%;
     height: 60px;
     background-color: $dark2;
     display: flex;
     border-bottom: 1px solid $dark6;
-    transition: 0.7s;
+    transition: 0.5s;
     .checkDiv {
         width: 15%;
         display: flex;
@@ -235,7 +238,7 @@ header {
     background-color: $light1;
     display: flex;
     border-bottom: 1px solid $light2;
-    transition: 0.7s;
+    transition: 0.5s;
     .checkDiv {
         width: 15%;
         display: flex;
@@ -320,7 +323,7 @@ header {
     border-bottom-right-radius: 5px;
     color: $dark5;
     font-size: 0.9em;
-    transition: 0.8;
+    transition: 0.5s;
     .listSelect {
         display: flex;
         justify-content: space-between;
@@ -354,7 +357,7 @@ header {
     border-bottom-right-radius: 5px;
     color: $light3;
     font-size: 0.9em;
-    transition: 0.8;
+    transition: 0.5s;
     .listSelect {
         display: flex;
         justify-content: space-between;

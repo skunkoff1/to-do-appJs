@@ -148,7 +148,7 @@ class Item {
 /*=========================== GESTION DRAG AND DROP ===========================*/
 /*=============================================================================*/
 
-$(function () {
+$(function() {
     $("#itemList").sortable();
     $("#itemList").disableSelection();
 });
@@ -236,7 +236,7 @@ function clear() {
 /*=============================================================================*/
 
 function sortArray() {
-    itemArray.sort(function (a, b) {
+    itemArray.sort(function(a, b) {
         if (a[3] === b[3]) {
             return 0;
         } else {
@@ -304,14 +304,14 @@ function updateStorage() {
     if (itemArray.length != 0) {
         for (const elmt of itemArray) {
             item++;
-            localStorage.setItem(item, elmt[1] + "*" + elmt[2]);
+            localStorage.setItem('item' + item, elmt[1] + "*" + elmt[2]);
         }
     }
 }
 
 function loadStorage() {
     for (let i = 1; i <= localStorage.length; i++) {
-        let params = localStorage.getItem(i);
+        let params = localStorage.getItem('item' + i);
         params = params.split("*");
         if (params[0] == "true") {
             params[0] = "false";
