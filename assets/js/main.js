@@ -150,7 +150,7 @@ class Item {
 
 $(function() {
     $("#itemList").sortable();
-    $("#itemList").disableSelection();
+    $(".textDiv").disableSelection();
 });
 
 
