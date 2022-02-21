@@ -15,12 +15,12 @@ let activeButtonMobile = document.getElementById('actM');
 let completedButtonMobile = document.getElementById('comM');
 let clearButton = document.getElementById('clear');
 clearButton.addEventListener('click', clear);
+let displayModeSelected;
+let initialDisplayMode;
 
 //Récupération du bouton dark/lignt
 let displayMode = document.querySelector('.mode');
 displayMode.addEventListener('click', changeDisplay);
-// Mode Dark par défaut
-let displayModeSelected = "dark";
 // Récupération des icones dark / light
 let sunIcon = document.getElementById('sun');
 let moonIcon = document.getElementById('moon');
@@ -256,7 +256,7 @@ function changeDisplay() {
     let items = document.getElementsByTagName('li');
     let message = document.getElementById('message');
     let listFooterMobile = document.getElementById('listFooterMobile');
-    if (displayModeSelected == "dark") {
+    if (displayModeSelected == "dark" || initialDisplayMode =="light") {
         displayModeSelected = "light";
         sunIcon.style.display = "none";
         moonIcon.style.display = "block";
@@ -307,19 +307,29 @@ function updateStorage() {
             localStorage.setItem('item' + item, elmt[1] + "*" + elmt[2]);
         }
     }
+    localStorage.setItem('mode', displayModeSelected);
 }
 
 function loadStorage() {
-    for (let i = 1; i <= localStorage.length; i++) {
+    if(localStorage.length != 0) {
+         for (let i = 1; i <= localStorage.length; i++) {
         let params = localStorage.getItem('item' + i);
-        params = params.split("*");
+        if(params != null) {
+            params = params.split("*");
         if (params[0] == "true") {
             params[0] = "false";
         } else {
             params[0] = "true";
         }
         new Item(params[1], params[0]);
+        }
+        
     }
+    initialDisplayMode = localStorage.getItem("mode");
+    changeDisplay();
+    initialDisplayMode="";
+    }
+   
 }
 
 setInterval(() => {
